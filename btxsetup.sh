@@ -15,8 +15,8 @@ echo '*** Step 1/5 ***'
 echo '*** Creating 2GB Swapfile ***'
 sleep 1
 dd if=/dev/zero of=/mnt/mybsdswap.swap bs=2M count=1000
-mkswap /mnt/mybsdswap.swap
-swapon /mnt/mybsdswap.swap
+mkswap /mnt/mybtxswap.swap
+swapon /mnt/mybtxswap.swap
 sleep 1
 echo '*** Done 1/5 ***'
 sleep 1
@@ -28,6 +28,8 @@ sudo apt-get dist-upgrade -y
 sudo apt-get install build-essential libtool autotools-dev autoconf pkg-config libssl-dev -y
 sudo apt-get install libboost-all-dev git npm nodejs nodejs-legacy libminiupnpc-dev redis-server -y
 sudo apt-get install software-properties-common -y
+sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils -y
+sudo apt-get install libzmq3-dev -y
 add-apt-repository ppa:bitcoin/bitcoin
 apt-get update -y
 apt-get install libdb4.8-dev libdb4.8++-dev -y
@@ -36,7 +38,7 @@ source ~/.profile
 echo '*** Done 2/5 ***'
 sleep 1
 echo '*** Step 3/5 ***'
-echo '*** Cloning and Compiling BitSend Wallet ***'
+echo '*** Cloning and Compiling BitCore Wallet ***'
 cd
 git clone https://github.com/LIMXTEC/BitCore
 cd BitCore
